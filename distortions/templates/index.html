@@ -20,7 +20,9 @@
 <ul>
   {% buttons %}
   {% for trap in traps %}
+  <div class='tooltip'>
   <li>{{ trap.name }}
+  <h2 class='tooltiptext'>{{ trap.description }}</h2>
   <form action="{{ trap.id }}" name="show">
     {% csrf_token %}
     <button type="submit" class="btn btn-primary">
@@ -34,6 +36,7 @@
     </button>
   </form>
   </li>
+  </div>
   {% endfor %}
   {% endbuttons %}
 </ul>
